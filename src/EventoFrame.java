@@ -3,6 +3,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
 
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
@@ -11,6 +12,8 @@ import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JScrollPane;
 import javax.swing.ListSelectionModel;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 
 public class EventoFrame extends JFrame{
 	
@@ -83,7 +86,7 @@ public class EventoFrame extends JFrame{
 						@Override
 						public void actionPerformed(ActionEvent arg0) {
 							
-							nomesEventos.addElement(arg0.toString());
+							nomesEventos.addElement(arg0);
 							
 						}
 						
@@ -91,7 +94,48 @@ public class EventoFrame extends JFrame{
 						
 					}
 				
-				);
+		);
+		
+		eventos.addListSelectionListener(
+				
+					new ListSelectionListener() {
+
+						@Override
+						public void valueChanged(ListSelectionEvent arg0) {
+							
+							nomesEventos.addElement(arg0);
+							
+						}
+						
+						
+						
+					}
+					
+		);
+		
+		addMouseMotionListener(
+				
+					new MouseMotionListener() {
+
+						@Override
+						public void mouseDragged(MouseEvent arg0) {
+							
+							nomesEventos.addElement(arg0);
+							
+						}
+
+						@Override
+						public void mouseMoved(MouseEvent arg0) {
+							
+							nomesEventos.addElement(arg0);
+							
+						}
+						
+						
+						
+					}
+				
+		);
 		
 	}
 	
