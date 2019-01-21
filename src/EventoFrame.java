@@ -1,6 +1,8 @@
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
@@ -11,6 +13,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JScrollPane;
+import javax.swing.JTextField;
 import javax.swing.ListSelectionModel;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
@@ -21,6 +24,7 @@ public class EventoFrame extends JFrame{
 	private final DefaultListModel nomesEventos = new DefaultListModel();
 	private final JLabel tituloEvento;
 	private final JButton botao;
+	private final JTextField texto;
 
 	public EventoFrame() {
 		
@@ -29,6 +33,10 @@ public class EventoFrame extends JFrame{
 		
 		tituloEvento = new JLabel("Eventos");
 		add(tituloEvento);
+		
+		texto = new JTextField(); 
+		texto.setColumns(10);
+		add(texto);
 		
 		botao = new JButton("ok");
 		add(botao);
@@ -134,6 +142,38 @@ public class EventoFrame extends JFrame{
 						
 						
 					}
+				
+		);
+		
+		texto.addKeyListener(
+				
+				new KeyListener() {
+
+					@Override
+					public void keyPressed(KeyEvent arg0) {
+						
+						nomesEventos.addElement(arg0);
+						
+					}
+
+					@Override
+					public void keyReleased(KeyEvent arg0) {
+						
+						nomesEventos.addElement(arg0);
+						
+					}
+
+					@Override
+					public void keyTyped(KeyEvent arg0) {
+						
+						nomesEventos.addElement(arg0);
+						
+					}
+					
+					
+					
+					
+				}
 				
 		);
 		
