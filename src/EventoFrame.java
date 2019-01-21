@@ -18,11 +18,11 @@ public class EventoFrame extends JFrame{
 		setLayout(new FlowLayout());
 		
 		eventos = new JList<String>(nomesEventos);
-		eventos.setVisibleRowCount(5);
+		
 		
 		
 		add(new JScrollPane(eventos));
-		
+		eventos.setVisibleRowCount(5);
 		add(eventos);
 		
 		
@@ -32,31 +32,31 @@ public class EventoFrame extends JFrame{
 
 					@Override
 					public void mouseClicked(MouseEvent arg0) {
-						nomesEventos.addElement(getClass().getMethods());
+						nomesEventos.addElement(arg0);
 						
 					}
 
 					@Override
 					public void mouseEntered(MouseEvent arg0) {
-						// TODO Auto-generated method stub
+						nomesEventos.addElement(arg0);
 						
 					}
 
 					@Override
 					public void mouseExited(MouseEvent arg0) {
-						// TODO Auto-generated method stub
+						nomesEventos.addElement(arg0);
 						
 					}
 
 					@Override
 					public void mousePressed(MouseEvent arg0) {
-						// TODO Auto-generated method stub
+						nomesEventos.addElement(arg0);
 						
 					}
 
 					@Override
 					public void mouseReleased(MouseEvent arg0) {
-						// TODO Auto-generated method stub
+						nomesEventos.addElement(arg0);
 						
 					}
 					
