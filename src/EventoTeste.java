@@ -6,7 +6,7 @@ public class EventoTeste {
 		
 		EventoFrame evento = new EventoFrame();
 		evento.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		evento.setSize(400, 400);
+		evento.setSize(1200, 400);
 		evento.setVisible(true);
 		
 	}

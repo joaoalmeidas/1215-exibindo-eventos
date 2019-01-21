@@ -6,6 +6,7 @@ import javax.swing.DefaultListModel;
 import javax.swing.JFrame;
 import javax.swing.JList;
 import javax.swing.JScrollPane;
+import javax.swing.ListSelectionModel;
 
 public class EventoFrame extends JFrame{
 	
@@ -17,15 +18,17 @@ public class EventoFrame extends JFrame{
 		super("Eventos");
 		setLayout(new FlowLayout());
 		
+
+		
 		eventos = new JList<String>(nomesEventos);
-		
-		
+		add(eventos);
+		eventos.setVisibleRowCount(30);
+		eventos.setFixedCellWidth(1200);
+		eventos.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
 		
 		add(new JScrollPane(eventos));
-		eventos.setVisibleRowCount(5);
-		add(eventos);
 		
-		
+
 		
 		addMouseListener(
 				new MouseListener(){
