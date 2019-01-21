@@ -1,9 +1,11 @@
+import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 import javax.swing.DefaultListModel;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JScrollPane;
 import javax.swing.ListSelectionModel;
@@ -12,13 +14,15 @@ public class EventoFrame extends JFrame{
 	
 	private final JList <String> eventos;
 	private final DefaultListModel nomesEventos = new DefaultListModel();
+	private final JLabel tituloEvento;
 
 	public EventoFrame() {
 		
 		super("Eventos");
 		setLayout(new FlowLayout());
 		
-
+		tituloEvento = new JLabel("Eventos");
+		add(tituloEvento);
 		
 		eventos = new JList<String>(nomesEventos);
 		add(eventos);
@@ -27,8 +31,6 @@ public class EventoFrame extends JFrame{
 		eventos.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
 		
 		add(new JScrollPane(eventos));
-		
-
 		
 		addMouseListener(
 				new MouseListener(){
